@@ -39,6 +39,7 @@ export class UseFile {
                     case "Imports":
                         imports = imports.concat(UseFile.insertValues(value));
                         break;
+                    // Fall through currently unsupported use-file tokens
                     case "Libs":
                     case "Additionals":
                     case "Main":
