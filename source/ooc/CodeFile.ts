@@ -6,10 +6,10 @@ import { ClassOrCoverDeclaration } from "./declarations/ClassOrCoverDeclaration"
 
 export class CodeFile {
     private children: Declaration.Declaration[] = [];
-    constructor() {
+    constructor(private file: string) {
     }
     static parse(file: string): CodeFile {
-        return new CodeFile();
+        return new CodeFile(file);
     }
     private static readBetween(str: string, startMarker: string = "{", endMarker: string = "}", startIndex: number = 0): { content: string, success: boolean } {
         var content: string;

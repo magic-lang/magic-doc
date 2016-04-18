@@ -39,6 +39,10 @@ export class UseFile {
                     case "Imports":
                         imports = imports.concat(UseFile.insertValues(value));
                         break;
+                    case "Libs":
+                    case "Additionals":
+                    case "Main":
+                        break;
                     default:
                         console.log("WARNING: Unrecognized use-file token: '" + token + "'");
                         break;
@@ -50,13 +54,12 @@ export class UseFile {
     }
     private static insertValues(values: string): string[] {
         var result: string[] = [];
-        if (values.indexOf(",") > -1) {
+        if (values.indexOf(",") > -1)
             result = values.split(",").map((value: string) => {
                 return value.trim();
             });
-        } else {
+        else
             result.push(values.trim());
-        }
         return result;
     }
 }
