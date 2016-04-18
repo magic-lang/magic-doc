@@ -34,10 +34,10 @@ export class UseFile {
                         sourcePath = value;
                         break;
                     case "Requires":
-                        requires = requires.concat(UseFile.insertValues(value))
+                        requires = requires.concat(UseFile.getValues(value))
                         break;
                     case "Imports":
-                        imports = imports.concat(UseFile.insertValues(value));
+                        imports = imports.concat(UseFile.getValues(value));
                         break;
                     // Fall through currently unsupported use-file tokens
                     case "Libs":
@@ -53,7 +53,7 @@ export class UseFile {
         }
         return result;
     }
-    private static insertValues(values: string): string[] {
+    private static getValues(values: string): string[] {
         var result: string[] = [];
         if (values.indexOf(",") > -1)
             result = values.split(",").map((value: string) => {
