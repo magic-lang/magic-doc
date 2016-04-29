@@ -1,6 +1,6 @@
 export enum TokenKind {
     Unknown,
-    Whitespace,
+    EndOfLine,
     LineComment,
     BlockComment,
     DocComment,
