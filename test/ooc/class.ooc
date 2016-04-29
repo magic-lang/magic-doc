@@ -1,0 +1,3 @@
+Foobar: class {
+    init: func
+}
