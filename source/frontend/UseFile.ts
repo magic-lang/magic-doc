@@ -41,6 +41,7 @@ export class UseFile {
                     case "Libs":
                     case "Additionals":
                     case "Main":
+                    case "Version":
                         break;
                     default:
                         console.log("WARNING: Unrecognized use-file token: '" + token + "'");
