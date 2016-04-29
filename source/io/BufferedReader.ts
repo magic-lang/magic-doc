@@ -16,7 +16,7 @@ export class BufferedReader implements Reader {
     read(length: number = 1): string {
         var result = this.peek(length);
         if (this.buffer.length > 0)
-            this.buffer = this.buffer.substring(length)
+            this.buffer = this.buffer.substring(length);
         return result;
     }
 }

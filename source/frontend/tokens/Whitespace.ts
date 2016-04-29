@@ -15,9 +15,9 @@ export class Whitespace extends Token {
             } while (Whitespace.isWhitespace(source.peek()));
             result = new Whitespace(buffer);
         }
-        return result
+        return result;
     }
     private static isWhitespace(character: string) {
-        return character === "\n" || character === "\r" || character === "\t" || character === " "
+        return character === "\n" || character === "\r" || character === "\t" || character === " ";
     }
 }
