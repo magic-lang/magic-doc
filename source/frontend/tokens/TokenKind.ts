@@ -3,6 +3,7 @@ export enum TokenKind {
     Whitespace,
     LineComment,
     BlockComment,
+    DocComment,
     Identifier,
     Separator,
     Operator,

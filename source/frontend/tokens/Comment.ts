@@ -18,10 +18,15 @@ export class Comment extends Token {
                 kind = TokenKind.LineComment;
                 break;
             case "/*":
-                source.read(2);
+                if (source.peek(3) == "/**") {
+                    kind = TokenKind.DocComment;
+                    source.read(3)
+                } else {
+                    kind = TokenKind.BlockComment;
+                    source.read(2);
+                }
                 while (source.peek() && source.peek(2) != "*/")
                     comment += source.read();
-                kind = TokenKind.BlockComment;
                 source.read(2);
                 break;
             default:
